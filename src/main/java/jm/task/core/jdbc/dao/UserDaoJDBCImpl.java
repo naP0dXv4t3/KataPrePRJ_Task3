@@ -42,7 +42,7 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public void removeUserById(long id) {
-        try (PreparedStatement pStatement = connection.prepareStatement("DELETE FROM users WHERE id=?")) {
+        try (PreparedStatement pStatement = connection.prepareStatement("DELETE FROM user WHERE id=?")) {
             pStatement.setLong(1,id);
             pStatement.executeUpdate();
         } catch (SQLException e) {
